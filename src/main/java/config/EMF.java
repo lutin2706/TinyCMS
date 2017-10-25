@@ -25,7 +25,7 @@ public class EMF implements ServletContextListener {
 		System.out.println("Initializing context");
 		emf = Persistence.createEntityManagerFactory("MY_PU");
 		System.out.println("File MY_PU read");
-		setDB();
+//		setDB();
 	}
 
 	public void contextDestroyed(ServletContextEvent sce) {

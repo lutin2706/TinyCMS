@@ -10,8 +10,19 @@ public class UserServiceImpl implements UserService{
 	private UserRepository rep = new UserRepositoryImpl();
 	
 	public User create(User u) {
-		// TODO Auto-generated method stub
 		return rep.create(u);
 	}
+
+	@Override
+	public User get(Long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public User getByLogin(String login, String password) {
+		return rep.getByLogin(login, password);
+	}
+	
 
 }
