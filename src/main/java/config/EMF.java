@@ -76,8 +76,5 @@ public class EMF implements ServletContextListener {
 //		Long userId = u.getId();
 		db.getTransaction().commit();
 		
-		// Récupération
-//		db.find(User.class, 1l);
-//		db.getTransaction().commit();
 	}
 }

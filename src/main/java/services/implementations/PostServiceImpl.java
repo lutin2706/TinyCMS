@@ -19,8 +19,7 @@ public class PostServiceImpl implements PostService {
 
 	@Override
 	public Post get(Long id) {
-		// TODO Auto-generated method stub
-		return null;
+		return rep.get(id);
 	}
 
 	@Override
@@ -37,7 +36,6 @@ public class PostServiceImpl implements PostService {
 
 	@Override
 	public List<Post> getList() {
-		// TODO Auto-generated method stub
 		return rep.getList();
 	}
 

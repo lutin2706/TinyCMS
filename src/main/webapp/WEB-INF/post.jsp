@@ -13,15 +13,20 @@
 <body>
 	<!--  Add categories in <nav> -->
 	<h1>${model.blogTitle }</h1>
-
-	<c:forEach var="post" items="${model.posts}">
-		<!-- <a href="details?id=${post.id}"> 
+	<h2>${model.post.title }</h2>
+	<p>${model.post.body }</p>
+	<!-- <a href="details?id=${post.id}"> 
 					<img
 							alt="${product.nom }" src="${product.imageURL }"></a> -->
-		<h2>${post.title }</h2>
-		<p>${post.body }</p>
-		<a href="post?id=${post.id}">Voir le post</a>
-	</c:forEach>
+	<p>Ecrit par : ${model.post.author.login }</p>
+	<p>Commentaires:</p>
+	<c:if test="${empty model.post.comments }">
+		<p>Il n'y aucun commentaire pour le moment</p>
+	</c:if>
+	<c:forEach var="comment" items="${model.post.comments}">
+		<p>${comment }</p>
+		<p>${comment.auhor.login }</p>p>
+			</c:forEach>
 
 </body>
 </html>

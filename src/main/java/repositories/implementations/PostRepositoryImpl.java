@@ -22,8 +22,10 @@ public class PostRepositoryImpl implements PostRepository {
 
 	@Override
 	public Post get(Long id) {
-		// TODO Auto-generated method stub
-		return null;
+		em.getTransaction().begin();
+		Post post = em.find(Post.class, id);
+		em.getTransaction().commit();
+		return post;
 	}
 
 }

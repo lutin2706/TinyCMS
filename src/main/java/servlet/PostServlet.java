@@ -8,12 +8,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import entities.Post;
 import services.PostService;
 import services.implementations.PostServiceImpl;
-import servlet.models.IndexModel;
+import servlet.models.PostModel;
 
-@WebServlet({"/", "/index"})
-public class IndexServlet extends HttpServlet {
+@WebServlet("/post")
+public class PostServlet extends HttpServlet {
 	
 	private static final long serialVersionUID = 1L;
        
@@ -21,14 +22,16 @@ public class IndexServlet extends HttpServlet {
 		System.out.println("Entry in:" + getServletName() + " - Method " + request.getMethod());
 		// TODO : get Blog title from DB
 		String blogTitle = "Blog de couture";
-		System.out.println("\tAffichage de la liste des posts");
+		System.out.println("\tAffichage d'un post");
 		
 		PostService ps = new PostServiceImpl();
+		Post post = ps.get(Long.parseLong(request.getParameter("id")));
 		
-		IndexModel model = new IndexModel(blogTitle, ps.getList());
+		
+		PostModel model = new PostModel(blogTitle, post);
 		request.setAttribute("model", model);
 		
-		request.getRequestDispatcher("WEB-INF/index.jsp").forward(request, response);
+		request.getRequestDispatcher("WEB-INF/post.jsp").forward(request, response);
 	}
 
 }
