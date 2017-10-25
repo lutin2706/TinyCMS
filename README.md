@@ -25,5 +25,5 @@ Pour faire fonctionner les EL (${ ....}) dans les JSP en utilisant Maven, vous d
                      http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
  version="3.0"
  metadata-complete="true">
-```xml
+```
 et en supprimant tout le bloc DOCTYPE du fichier web.xml.
