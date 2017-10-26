@@ -39,7 +39,7 @@ public class Post {
 	@ManyToOne
 	private Category category;
 	
-	@OneToMany(mappedBy="post", fetch=FetchType.LAZY)
+	@OneToMany(mappedBy="post", fetch=FetchType.EAGER)
 	private Set<Comment> comments = new HashSet<>();
 	
 	@ManyToMany(mappedBy="posts", fetch=FetchType.EAGER)

@@ -39,6 +39,7 @@ public class CommentServlet extends HttpServlet {
 		CommentService cs = new CommentServiceImpl();
 		cs.create(comment);
 		
+		// TODO page post pas rafraîchie lorsqu'on poste le commentaire
 		response.sendRedirect("post?id=" + post.getId());
 		
 //		User user = us.getByLogin(request.getParameter("login"), request.getParameter("password"));
