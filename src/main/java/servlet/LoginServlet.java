@@ -12,7 +12,7 @@ import entities.User;
 import services.UserService;
 import services.implementations.UserServiceImpl;
 
-@WebServlet("/login")
+@WebServlet({"/login","/logout"})
 public class LoginServlet extends HttpServlet {
 	
 	private static final long serialVersionUID = 1L;
@@ -23,12 +23,20 @@ public class LoginServlet extends HttpServlet {
 //		String blogTitle = "Blog de couture";
 		System.out.println("\tAffichage de la page de login");
 		
+		String action = request.getRequestURI().substring(request.getContextPath().length());
+		System.out.println("\tAction=" + action);
+		
+		if (action.equals("/login"))
 //		PostService ps = new PostServiceImpl();
 //		
 //		IndexModel model = new IndexModel(blogTitle, ps.getList());
 //		request.setAttribute("blogTitle", model);
 		
-		request.getRequestDispatcher("WEB-INF/login.jsp").forward(request, response);
+			request.getRequestDispatcher("WEB-INF/login.jsp").forward(request, response);
+		else if (action.equals("/logout")) {
+			request.getSession().invalidate();
+			response.sendRedirect("index");
+		}
 	}
 
 	@Override

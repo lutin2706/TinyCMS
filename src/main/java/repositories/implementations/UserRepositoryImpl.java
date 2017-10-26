@@ -1,6 +1,7 @@
 package repositories.implementations;
 
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 import javax.persistence.Query;
 
 import config.EMF;
@@ -31,7 +32,12 @@ public class UserRepositoryImpl implements UserRepository {
 		Query query = em.createQuery("SELECT u FROM User u WHERE u.login LIKE :login AND u.password LIKE :password");
 		query.setParameter("login", log);
 		query.setParameter("password", pwd);
-		User user = (User)query.getSingleResult();
+		User user = null;
+		try {
+			user = (User)query.getSingleResult();
+		} catch (NoResultException e) {
+			System.out.println("Aucun user trouvé avec ce password");
+		}
 		return user;
 	}
 

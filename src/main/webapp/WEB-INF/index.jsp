@@ -6,7 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>${model.blogTitle }</title>
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="resources/basic.css">
 </head>
 <body>
 	<!--  Add categories in <nav> -->
@@ -16,7 +16,8 @@
 			<a href="login">Login</a>
 		</c:if>
 		<c:if test="${!empty user }">
-			<p>Bienvenue ${user.login } !</p>
+			<p>Bienvenue ${user.login } !
+			<a href="logout">Se déconnecter</a></p>
 		</c:if>
 	</p>
 	<c:forEach var="post" items="${model.posts}">
@@ -27,6 +28,5 @@
 		<p>${post.body }</p>
 		<a href="post?id=${post.id}">Voir le post</a>
 	</c:forEach>
-
 </body>
 </html>

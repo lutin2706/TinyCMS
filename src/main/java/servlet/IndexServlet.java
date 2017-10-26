@@ -12,7 +12,7 @@ import services.PostService;
 import services.implementations.PostServiceImpl;
 import servlet.models.IndexModel;
 
-@WebServlet({"/", "/index"})
+@WebServlet({"","/index"})
 public class IndexServlet extends HttpServlet {
 	
 	private static final long serialVersionUID = 1L;
