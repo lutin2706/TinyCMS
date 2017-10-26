@@ -7,4 +7,5 @@ public interface UserService {
 	User create(User u);
 	User get(Long id);
 	User getByLogin(String login, String password);
+	long count();
 }

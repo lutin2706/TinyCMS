@@ -22,6 +22,11 @@ public class UserServiceImpl implements UserService{
 	public User getByLogin(String login, String password) {
 		return rep.getByLogin(login, password);
 	}
+
+	@Override
+	public long count() {
+		return rep.count();
+	}
 	
 
 }

@@ -11,4 +11,5 @@ public interface PostService {
 	Post update(Post p);
 	Post remove(Long id);
 	List<Post> getList();
+	long count();
 }

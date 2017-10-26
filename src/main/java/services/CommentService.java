@@ -11,4 +11,5 @@ public interface CommentService {
 	Comment update(Comment p);
 	Comment remove(Long id);
 	List<Comment> getList();
+	long count();
 }

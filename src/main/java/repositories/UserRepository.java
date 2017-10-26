@@ -8,4 +8,6 @@ public interface UserRepository {
 	User getByLogin(String login, String password);
 
 	User get(Long id);
+
+	long count();
 }

@@ -39,4 +39,9 @@ public class PostServiceImpl implements PostService {
 		return rep.getList();
 	}
 
+	@Override
+	public long count() {
+		return rep.count();
+	}
+
 }

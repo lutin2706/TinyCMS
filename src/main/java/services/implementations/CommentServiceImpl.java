@@ -39,4 +39,9 @@ public class CommentServiceImpl implements CommentService {
 		return null;
 	}
 
+	@Override
+	public long count() {
+		return rep.count();
+	}
+
 }

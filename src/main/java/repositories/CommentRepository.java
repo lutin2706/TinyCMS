@@ -8,4 +8,6 @@ public interface CommentRepository {
 
 	Comment create(Comment c);
 
+	long count();
+
 }

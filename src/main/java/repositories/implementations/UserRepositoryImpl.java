@@ -49,4 +49,11 @@ public class UserRepositoryImpl implements UserRepository {
 		return user;
 	}
 
+	@Override
+	public long count() {
+		Query query = em.createQuery("SELECT COUNT(u.id) FROM User u");
+		long nbr = (long)query.getSingleResult();
+		return nbr;
+	}
+
 }

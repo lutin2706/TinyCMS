@@ -1,6 +1,7 @@
 package repositories.implementations;
 
 import javax.persistence.EntityManager;
+import javax.persistence.Query;
 
 import config.EMF;
 import entities.Comment;
@@ -24,6 +25,13 @@ public class CommentRepositoryImpl implements CommentRepository {
 		em.persist(c);
 		em.getTransaction().commit();
 		return c;
+	}
+
+	@Override
+	public long count() {
+		Query query = em.createQuery("SELECT COUNT(c.id) FROM Comment c");
+		long nbr = (long)query.getSingleResult();
+		return nbr;
 	}
 
 }

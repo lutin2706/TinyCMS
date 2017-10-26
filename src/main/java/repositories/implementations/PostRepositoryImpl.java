@@ -28,4 +28,11 @@ public class PostRepositoryImpl implements PostRepository {
 		return post;
 	}
 
+	@Override
+	public long count() {
+		Query query = em.createQuery("SELECT COUNT(p.id) FROM Post p");
+		long nbr = (long)query.getSingleResult();
+		return nbr;
+	}
+
 }
