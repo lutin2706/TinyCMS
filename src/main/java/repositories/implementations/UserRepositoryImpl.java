@@ -41,4 +41,12 @@ public class UserRepositoryImpl implements UserRepository {
 		return user;
 	}
 
+	@Override
+	public User get(Long id) {
+		em.getTransaction().begin();
+		User user = em.find(User.class, id);
+		em.getTransaction().commit();
+		return user;
+	}
+
 }

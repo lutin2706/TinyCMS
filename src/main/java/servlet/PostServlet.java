@@ -27,7 +27,6 @@ public class PostServlet extends HttpServlet {
 		PostService ps = new PostServiceImpl();
 		Post post = ps.get(Long.parseLong(request.getParameter("id")));
 		
-		
 		PostModel model = new PostModel(blogTitle, post);
 		request.setAttribute("model", model);
 		

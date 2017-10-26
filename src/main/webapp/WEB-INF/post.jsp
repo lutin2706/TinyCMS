@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+	<c:import url="navigation.jsp" />
 	<!--  Add categories in <nav> -->
 	<h1>${model.blogTitle }</h1>
 	<h2>${model.post.title }</h2>
@@ -22,9 +23,23 @@
 		<p>Il n'y aucun commentaire pour le moment</p>
 	</c:if>
 	<c:forEach var="comment" items="${model.post.comments}">
-		<p>${comment }</p>
-		<p>${comment.auhor.login }</p>p>
-			</c:forEach>
-
+		<p>${comment.text }</p>
+		<p>Envoyé par: ${comment.author.login } le ${comment.date }</p>
+	</c:forEach>
+	<c:if test="${empty user }">
+	<p>Vous devez être connecté(e) pour envoyer un commentaire</p>
+	</c:if>
+	<c:if test="${!empty user }">
+		<form action="comment" method="post">
+			<input type="hidden" name="postid" value="${model.post.id }">
+			<input type="hidden" name="author" value="${user.id }">
+			<div class="form-group">
+				<label for="exampleFormControlTextarea1">Commentaire:</label>
+				<textarea name="text" placeholder="Votre commentaire" rows="3"
+					cols="50"></textarea>
+			</div>
+			<button type="submit">Envoyer un commentaire</button>
+		</form>
+	</c:if>
 </body>
 </html>
