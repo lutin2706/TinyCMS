@@ -16,8 +16,7 @@
 	<table class="table table-striped">
 		<thead>
 			<tr>
-<!-- 				<th scope="col">#</th>
- -->				<th scope="col">Title</th>
+				<th scope="col">Title</th>
 				<th scope="col">Category</th>
 				<th scope="col">Date</th>
 				<th scope="col">Author</th>
@@ -26,8 +25,7 @@
 		<tbody>
 		<c:forEach var="post" items="${model.posts }">
 			<tr>
-<%-- 				<th scope="row">${post.id }</th>
- --%>				<td>${post.title }</td>
+ 				<td>${post.title }</td>
 				<td>${post.category.name }</td>
 				<td>${post.date }</td>
 				<td>${post.author.login }</td>
