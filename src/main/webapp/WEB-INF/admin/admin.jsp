@@ -22,7 +22,7 @@
 						<p class="card-text">
 							Vous avez actuellement ${model.nbrPosts } articles sur votre blog
 							<br> <a href="createPost">Créer un nouvel article</a> 
-							<br> <a href="">Voir la liste complète</a>
+							<br> <a href="listPosts">Voir la liste complète</a>
 						</p>
 					</div>
 				</div>
