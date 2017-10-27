@@ -35,4 +35,12 @@ public class CategoryRepositoryImpl implements CategoryRepository {
 		return cat;
 	}
 
+	@Override
+	public Category create(Category c) {
+		em.getTransaction().begin();
+		em.persist(c);
+		em.getTransaction().commit();
+		return c;
+	}
+
 }

@@ -6,8 +6,9 @@ import entities.Category;
 
 public interface CategoryService {
 
-	long count();
-	List<Category> getList();
+	Category create(Category category);
 	Category get(Long catId);
+	List<Category> getList();
+	long count();
 
 }

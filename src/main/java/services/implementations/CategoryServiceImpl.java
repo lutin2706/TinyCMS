@@ -26,4 +26,9 @@ public class CategoryServiceImpl implements CategoryService {
 		return rep.get(catId);
 	}
 
+	@Override
+	public Category create(Category category) {
+		return rep.create(category);
+	}
+
 }

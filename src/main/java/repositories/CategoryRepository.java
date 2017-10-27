@@ -12,4 +12,6 @@ public interface CategoryRepository {
 
 	Category get(Long catId);
 
+	Category create(Category category);
+
 }

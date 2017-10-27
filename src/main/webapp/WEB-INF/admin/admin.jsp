@@ -33,7 +33,7 @@
 						<h1 class="card-title">Catégories</h1>
 						<p class="card-text">
 							Vous avez actuellement ${model.nbrCategories } catégories
-							définies <br> <a href="">Créer une nouvelle catégorie</a> <br>
+							définies <br> <a href="createCategory">Créer une nouvelle catégorie</a> <br>
 							<a href="">Voir la liste complète</a>
 						</p>
 					</div>
@@ -73,15 +73,12 @@
 	<!-- Bootstrap core JavaScript
     ================================================== -->
 	<!-- Placed at the end of the document so the pages load faster -->
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-		crossorigin="anonymous"></script>
-	<script>
-		window.jQuery
-				|| document
-						.write('<script src="../../../../assets/js/vendor/jquery.min.js"><\/script>')
-	</script>
-	<script src="../../../../assets/js/vendor/popper.min.js"></script>
-	<script src="bootstratp/js/bootstrap.min.js"></script>
+	<script src="../bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- 	<script src="../bootstrap/js/bootstrap.min.js"></script>
+	<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+ -->		
 </body>
 </html>
