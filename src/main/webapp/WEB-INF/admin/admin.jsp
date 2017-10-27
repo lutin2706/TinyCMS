@@ -59,7 +59,7 @@
 						<h1 class="card-title">Utilisateurs</h1>
 						<p class="card-text">
 							Vous avez actuellement ${model.nbrPosts } utilisateurs actifs <br>
-							<a href="">Créer un nouvel utilisateur</a> <br> <a href="">Voir
+							<a href="createUser">Créer un nouvel utilisateur</a> <br> <a href="">Voir
 								la liste complète</a>
 						</p>
 					</div>

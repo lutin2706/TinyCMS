@@ -22,7 +22,7 @@ import servlet.admin.models.AdminModel;
 public class AdminServlet extends HttpServlet {
 	
 	private static final long serialVersionUID = 1L;
-       
+      // TODO: Limit this page to connected users
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("Entry in:" + getServletName() + " - Method " + request.getMethod());
 		String blogTitle = "Blog de couture";

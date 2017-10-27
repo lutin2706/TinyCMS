@@ -24,7 +24,7 @@ public class Role {
 	private Long id;
 	
 	@Column(nullable=false)
-	private String nom;
+	private String name;
 	
 	@OneToMany(mappedBy="role", fetch=FetchType.LAZY) 
 	private Set<User> users = new HashSet<>();
@@ -32,8 +32,8 @@ public class Role {
 	public Role() {
 	}
 
-	public Role(String nom) {
-		this.nom = nom;
+	public Role(String name) {
+		this.name = name;
 	}
 
 	public Long getId() {
@@ -44,12 +44,12 @@ public class Role {
 		this.id = id;
 	}
 
-	public String getNom() {
-		return nom;
+	public String getName() {
+		return name;
 	}
 
-	public void setNom(String nom) {
-		this.nom = nom;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public Set<User> getUsers() {

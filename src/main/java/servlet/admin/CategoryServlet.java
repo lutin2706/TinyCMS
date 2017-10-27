@@ -11,13 +11,13 @@ import javax.servlet.http.HttpServletResponse;
 import entities.Category;
 import services.CategoryService;
 import services.implementations.CategoryServiceImpl;
-import servlet.admin.models.PostAdminModel;
+import servlet.admin.models.PostCatModel;
 
 @WebServlet("/admin/createCategory")
 public class CategoryServlet extends HttpServlet {
 	
 	private static final long serialVersionUID = 1L;
-       
+    // TODO: limit this feature to admin
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("Entry in:" + getServletName() + " - Method " + request.getMethod());
 		String blogTitle = "Blog de couture";
@@ -25,7 +25,7 @@ public class CategoryServlet extends HttpServlet {
 		
 		CategoryService cs = new CategoryServiceImpl();
 		
-		PostAdminModel model = new PostAdminModel(blogTitle, cs.getList());
+		PostCatModel model = new PostCatModel(blogTitle, cs.getList());
 		request.setAttribute("model", model);
 		
 		request.getRequestDispatcher("/WEB-INF/admin/category.jsp").forward(request, response);
