@@ -10,12 +10,12 @@
 <link rel="stylesheet" href="bootstrap/css/starter-template.css">
 </head>
 <body>
-	<c:import url="header_front.jsp" />
+	<c:import url="header.jsp" />
 	<main role="main" class="container"> 
 	<c:forEach var="post" items="${model.posts}">
 		<div class="card">
+			<h2 class="card-header">${post.title }</h4>
 			<div class="card-body">
-				<h1 class="card-title">${post.title }</h1>
 				<p class="card-text"> ${post.body }
 					<br> <a href="post?id=${post.id}">Voir le post</a>
 				</p>

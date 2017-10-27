@@ -35,4 +35,12 @@ public class PostRepositoryImpl implements PostRepository {
 		return nbr;
 	}
 
+	@Override
+	public Post create(Post p) {
+		em.getTransaction().begin();
+		em.persist(p);
+		em.getTransaction().commit();
+		return p;
+	}
+
 }

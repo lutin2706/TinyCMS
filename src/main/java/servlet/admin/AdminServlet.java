@@ -1,4 +1,4 @@
-package servlet;
+package servlet.admin;
 
 import java.io.IOException;
 
@@ -8,18 +8,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import services.CommentService;
+import services.CategoryService;
 import services.PostService;
 import services.TagService;
 import services.UserService;
-import services.implementations.CommentServiceImpl;
+import services.implementations.CategoryServiceImpl;
 import services.implementations.PostServiceImpl;
 import services.implementations.TagServiceImpl;
 import services.implementations.UserServiceImpl;
-import servlet.models.AdminModel;
-import servlet.models.IndexModel;
+import servlet.admin.models.AdminModel;
 
-@WebServlet("/admin")
+@WebServlet("/admin/")
 public class AdminServlet extends HttpServlet {
 	
 	private static final long serialVersionUID = 1L;
@@ -31,13 +30,13 @@ public class AdminServlet extends HttpServlet {
 		
 		UserService us = new UserServiceImpl();
 		PostService ps = new PostServiceImpl();
-		CommentService cs = new CommentServiceImpl();
+		CategoryService cs = new CategoryServiceImpl();
 		TagService ts = new TagServiceImpl();
 		
 		AdminModel model = new AdminModel(blogTitle, ps.count(), cs.count(), ts.count(), us.count());
 		request.setAttribute("model", model);
 		
-		request.getRequestDispatcher("WEB-INF/admin.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/admin/admin.jsp").forward(request, response);
 	}
 
 }

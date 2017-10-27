@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="bootstrap/css/starter-template.css">
 </head>
 <body>
-	<c:import url="header_front.jsp" />
+	<c:import url="header.jsp" />
 	<main role="main" class="container">
 
 	<div>

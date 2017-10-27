@@ -9,4 +9,5 @@ public interface PostRepository {
 	List<Post> getList();
 	Post get(Long id);
 	long count();
+	Post create(Post p);
 }

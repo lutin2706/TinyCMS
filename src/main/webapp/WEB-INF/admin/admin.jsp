@@ -6,28 +6,28 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Administration de ${model.blogTitle }</title>
-<link rel="stylesheet" href="bootstrap/css/bootstrap.css">
-<link rel="stylesheet" href="bootstrap/css/starter-template.css">
+<link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
+<link rel="stylesheet" href="../bootstrap/css/starter-template.css">
 </head>
 <body>
-	<c:import url="header_back.jsp" />
+	<c:import url="header.jsp" />
 	<main role="main" class="container">
 	<h1>Administration de ${model.blogTitle }</h1>
 	<div class="container">
 		<div class="row">
-			<div class="col">
+			<div class="col-sm-6">
 				<div class="card">
 					<div class="card-body">
 						<h1 class="card-title">Articles</h1>
 						<p class="card-text">
 							Vous avez actuellement ${model.nbrPosts } articles sur votre blog
-							<br> <a href="post?id=${post.id}">Créer un nouvel
-								article</a> <br> <a href="">Voir la liste complète</a>
+							<br> <a href="createPost">Créer un nouvel article</a> 
+							<br> <a href="">Voir la liste complète</a>
 						</p>
 					</div>
 				</div>
 			</div>
-			<div class="col">
+			<div class="col-sm-6">
 				<div class="card">
 					<div class="card-body">
 						<h1 class="card-title">Catégories</h1>
@@ -39,9 +39,9 @@
 					</div>
 				</div>
 			</div>
-		</div>
+<!-- 		</div>
 		<div class="row">
-			<div class="col">
+ -->			<div class="col-sm-6">
 				<div class="card">
 					<div class="card-body">
 						<h1 class="card-title">Tags</h1>
@@ -53,7 +53,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col">
+			<div class="col-sm-6">
 				<div class="card">
 					<div class="card-body">
 						<h1 class="card-title">Utilisateurs</h1>
@@ -82,6 +82,6 @@
 						.write('<script src="../../../../assets/js/vendor/jquery.min.js"><\/script>')
 	</script>
 	<script src="../../../../assets/js/vendor/popper.min.js"></script>
-	<script src="../../../../dist/js/bootstrap.min.js"></script>
+	<script src="bootstratp/js/bootstrap.min.js"></script>
 </body>
 </html>

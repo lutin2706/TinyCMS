@@ -9,7 +9,7 @@
 				<li class="nav-item"><a class="nav-link" href="index">Home</a>
 				</li>
 				<c:if test="${!empty user }">
-				<li class="nav-item"><a class="nav-link" href="admin">Administration</a></li>
+				<li class="nav-item"><a class="nav-link" href="admin/">Administration</a></li>
 				</c:if>
 			</ul>
 		</div>

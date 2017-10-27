@@ -105,5 +105,13 @@ public class User {
 	public void setComments(Set<Comment> comments) {
 		this.comments = comments;
 	}
+
+	@Override
+	public String toString() {
+		return "User [" + (id != null ? "id=" + id + ", " : "") + (login != null ? "login=" + login + ", " : "")
+				+ (password != null ? "password=" + password + ", " : "")
+				+ (email != null ? "email=" + email + ", " : "") + (role != null ? "role=" + role + ", " : "")
+				+ "]";
+	}
 	
 }

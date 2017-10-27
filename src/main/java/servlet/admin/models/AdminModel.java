@@ -1,4 +1,4 @@
-package servlet.models;
+package servlet.admin.models;
 
 public class AdminModel {
 

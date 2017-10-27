@@ -48,11 +48,11 @@ public class Post {
 	public Post() {
 	}
 
-	public Post(String title, String body, LocalDate date, User author, Category category) {
+	public Post(String title, String body, LocalDate date, User user, Category category) {
 		this.title = title;
 		this.body = body;
 		this.date = date;
-		this.author = author;
+		this.author = user;
 		this.category = category;
 	}
 
@@ -120,5 +120,13 @@ public class Post {
 		this.tags = tags;
 	}
 
-	
+	@Override
+	public String toString() {
+		return "Post [" + (id != null ? "id=" + id + ", " : "") + (title != null ? "title=" + title + ", " : "")
+				+ (body != null ? "body=" + body + ", " : "") + (date != null ? "date=" + date + ", " : "")
+				+ (author != null ? "author=" + author + ", " : "")
+				+ (category != null ? "category=" + category + ", " : "")
+				+ "]";
+	}
+
 }

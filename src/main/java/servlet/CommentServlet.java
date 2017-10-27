@@ -28,6 +28,8 @@ public class CommentServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("Entry in:" + getServletName() + " - Method " + request.getMethod());
 		
+		request.setCharacterEncoding("UTF-8");
+
 		String text = request.getParameter("text");
 		PostService ps = new PostServiceImpl();
 		Post post = ps.get(Long.valueOf(request.getParameter("postid")));
@@ -39,21 +41,7 @@ public class CommentServlet extends HttpServlet {
 		CommentService cs = new CommentServiceImpl();
 		cs.create(comment);
 		
-		// TODO page post pas rafraîchie lorsqu'on poste le commentaire
+		// TODO page post pas rafraï¿½chie lorsqu'on poste le commentaire
 		response.sendRedirect("post?id=" + post.getId());
-		
-//		User user = us.getByLogin(request.getParameter("login"), request.getParameter("password"));
-//
-//		System.out.println("\tUser retrieved : " + user);
-//
-//		if (user != null) {// && BCrypt.checkpw(request.getParameter("password"), user.getPassword())) {
-//			System.out.println("\tUtilisateur retrouvé et password correct => accès à la page d'accueil");
-//			request.getSession().setAttribute("user", user);
-//			response.sendRedirect("index");
-//		} else {
-//			System.out.println("\tUtilisateur inconnu ou password incorrect => retour à la page de login");
-//			request.setAttribute("erreur", "Mauvais login/password. Veuillez ré-essayer");
-//			request.getRequestDispatcher("WEB-INF/login.jsp").forward(request, response);
-//		}
 	}
 }
