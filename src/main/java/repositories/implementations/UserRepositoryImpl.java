@@ -1,20 +1,59 @@
 package repositories.implementations;
 
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
+import javax.persistence.Query;
 
 import config.EMF;
 import entities.User;
 import repositories.UserRepository;
 
 public class UserRepositoryImpl implements UserRepository {
+	
+	private EntityManager em = EMF.getEM();
 
 	public User create(User u) {
-		// TODO Auto-generated method stub
-		EntityManager em = EMF.getEM();
 		em.getTransaction().begin();
 		em.persist(u);
 		em.getTransaction().commit();
 		return u;
+	}
+	
+	public User getUser(String log, String pwd) {
+		Query query = em.createQuery("SELECT u FROM User u WHERE u.login LIKE :login AND u.password LIKE :password");
+		query.setParameter("login", log);
+		query.setParameter("password", pwd);
+		User user = (User)query.getSingleResult();
+		return user;
+	}
+
+	@Override
+	public User getByLogin(String log, String pwd) {
+		Query query = em.createQuery("SELECT u FROM User u WHERE u.login LIKE :login AND u.password LIKE :password");
+		query.setParameter("login", log);
+		query.setParameter("password", pwd);
+		User user = null;
+		try {
+			user = (User)query.getSingleResult();
+		} catch (NoResultException e) {
+			System.out.println("Aucun user trouvé avec ce password");
+		}
+		return user;
+	}
+
+	@Override
+	public User get(Long id) {
+		em.getTransaction().begin();
+		User user = em.find(User.class, id);
+		em.getTransaction().commit();
+		return user;
+	}
+
+	@Override
+	public long count() {
+		Query query = em.createQuery("SELECT COUNT(u.id) FROM User u");
+		long nbr = (long)query.getSingleResult();
+		return nbr;
 	}
 
 }

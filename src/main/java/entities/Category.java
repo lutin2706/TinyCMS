@@ -21,7 +21,7 @@ public class Category {
 	private Long id;
 	
 	@Column(nullable=false)
-	private String nom;
+	private String name;
 	
 	@JoinColumn(nullable=true)
 	@ManyToOne
@@ -36,8 +36,8 @@ public class Category {
 	public Category() {
 	}
 
-	public Category(String nom, Category parent) {
-		this.nom = nom;
+	public Category(String name, Category parent) {
+		this.name = name;
 		this.parent = parent;
 	}
 
@@ -49,12 +49,12 @@ public class Category {
 		this.id = id;
 	}
 
-	public String getNom() {
-		return nom;
+	public String getName() {
+		return name;
 	}
 
-	public void setNom(String nom) {
-		this.nom = nom;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public Category getParent() {

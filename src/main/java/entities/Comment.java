@@ -45,7 +45,7 @@ public class Comment {
 	public Comment() {
 	}
 
-	protected Comment(String text, LocalDate date, Post post, User author, Comment parent) {
+	public Comment(String text, LocalDate date, Post post, User author, Comment parent) {
 		this.text = text;
 		this.date = date;
 		this.post = post;

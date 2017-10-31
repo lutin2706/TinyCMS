@@ -18,7 +18,7 @@
             <property name="hibernate.format_sql" value="true" />
             
             <!-- la première fois, on se met en mode create -->
-            <property name="hibernate.hbm2ddl.auto" value="create" />
+            <property name="hibernate.hbm2ddl.auto" value="" />
         </properties>
     </persistence-unit>
 </persistence>
