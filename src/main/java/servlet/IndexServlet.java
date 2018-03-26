@@ -8,7 +8,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import services.CategoryService;
 import services.PostService;
+import services.implementations.CategoryServiceImpl;
 import services.implementations.PostServiceImpl;
 import servlet.models.IndexModel;
 
@@ -24,8 +26,9 @@ public class IndexServlet extends HttpServlet {
 		System.out.println("\tAffichage de la liste des posts");
 		
 		PostService ps = new PostServiceImpl();
+		CategoryService cs = new CategoryServiceImpl();
 		
-		IndexModel model = new IndexModel(blogTitle, ps.getList());
+		IndexModel model = new IndexModel(blogTitle, ps.getList(), cs.getList());
 		request.setAttribute("model", model);
 		
 		request.getRequestDispatcher("WEB-INF/index.jsp").forward(request, response);

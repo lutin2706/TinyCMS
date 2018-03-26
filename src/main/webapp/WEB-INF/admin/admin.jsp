@@ -69,16 +69,7 @@
 	</main>
 	<!-- /.container -->
 
+	<c:import url="footer.jsp" />
 
-	<!-- Bootstrap core JavaScript
-    ================================================== -->
-	<!-- Placed at the end of the document so the pages load faster -->
-	<script src="../bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- 	<script src="../bootstrap/js/bootstrap.min.js"></script>
-	<script
-  src="https://code.jquery.com/jquery-3.2.1.min.js"
-  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-  crossorigin="anonymous"></script>
- -->		
 </body>
 </html>

@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import services.PostService;
 import services.implementations.PostServiceImpl;
+import servlet.admin.models.PostListModel;
 
 @WebServlet("/admin/listPosts")
 public class PostListServlet extends HttpServlet {
@@ -17,9 +18,9 @@ public class PostListServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private PostService ps = new PostServiceImpl();
 	
-      // TODO: Limit this feature to connected users
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+ 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("Entry in:" + getServletName() + " - Method " + request.getMethod());
+		
 		String blogTitle = "Blog de couture";
 		System.out.println("\tAffichage de la liste des articles");
 			

@@ -1,4 +1,4 @@
-package servlet.admin;
+package servlet.admin.models;
 
 import java.util.List;
 

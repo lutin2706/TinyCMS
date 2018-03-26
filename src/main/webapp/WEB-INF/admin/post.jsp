@@ -6,8 +6,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Administration de ${model.blogTitle }</title>
-<link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
-<link rel="stylesheet" href="../bootstrap/css/starter-template.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+<link rel="stylesheet" href="../css/admin_style.css">
 </head>
 <body>
 	<c:import url="header.jsp" />
@@ -18,6 +18,9 @@
 			<label for="exampleFormControlInput1">Titre</label> <input
 				name="title" type="text" class="form-control" id="exampleFormControlInput1"
 				placeholder="Titre de l'article" cols="100">
+			<c:if test="${contraintes.containsKey('title') }">
+				<p class="error">${contraintes.get('title') }</p>
+			</c:if>
 		</div>
 		<div class="form-group">
 			<label for="exampleFormControlSelect1">Catégorie</label> 
@@ -33,8 +36,11 @@
 			<textarea name="body" class="form-control" id="exampleFormControlTextarea1"
 				rows="20" cols="100" aria-describedby="textHelpBlock"
 				placeholder="Insérez votre article ici"></textarea>
+			<c:if test="${contraintes.containsKey('body') }">
+				<p class="error">${contraintes.get('body') }</p>
+			</c:if>
 			<small id="textHelpBlock" class="form-text text-muted">Votre
-				texte ne peut pas contenir de balises HTML.</small>
+				texte ne peut pas contenir de balises HTML et doit contenir entre 100 et 500 caractères.</small>
 		</div>
 		<button class="btn btn-primary" type="submit">Envoyer
 			l'article</button>
@@ -42,19 +48,7 @@
 	</main>
 	<!-- /.container -->
 
+	<c:import url="footer.jsp" />
 
-	<!-- Bootstrap core JavaScript
-    ================================================== -->
-	<!-- Placed at the end of the document so the pages load faster -->
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-		crossorigin="anonymous"></script>
-	<script>
-		window.jQuery
-				|| document
-						.write('<script src="../../../../assets/js/vendor/jquery.min.js"><\/script>')
-	</script>
-	<script src="../../../../assets/js/vendor/popper.min.js"></script>
-	<script src="../../../../dist/js/bootstrap.min.js"></script>
 </body>
 </html>

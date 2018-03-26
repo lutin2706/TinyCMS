@@ -17,7 +17,7 @@ import servlet.admin.models.PostCatModel;
 public class CategoryServlet extends HttpServlet {
 	
 	private static final long serialVersionUID = 1L;
-    // TODO: limit this feature to admin
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("Entry in:" + getServletName() + " - Method " + request.getMethod());
 		String blogTitle = "Blog de couture";

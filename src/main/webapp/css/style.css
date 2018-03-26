@@ -1,0 +1,37 @@
+@charset "UTF-8";
+
+body {
+	background-color: #393E34;
+}
+
+header {
+	max-width: 80%;
+	background-color: white;
+	background: url("../images/background.jpg");
+	height: 300 px;
+}
+
+header h1 {
+	color: #9E0B43;	
+}
+
+header p {
+	color: #393E34;
+	text-align: right;
+	font-size: 1.2em;
+	font-weight: bold;
+}
+
+nav {
+	background-color: #9E0B43;
+}
+
+.main {
+	max-width: 80%;
+	background-color: white;
+}
+
+footer {
+	max-width: 80%;
+	background-color: #9E0B43;
+}
